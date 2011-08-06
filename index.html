@@ -15,7 +15,6 @@
 
 	<!-- For all browsers -->
 	<link href="css/global.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
 
 	<!-- Selectivizr (GOES IN HEAD)  -->
 	<!--[if IE 7 ]>
@@ -85,11 +84,9 @@
 	<!-- JQuery -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 	<script> window.jQuery || document.write('<script src="js/lib/jquery-1.6.1.min.js">\x3C/script>') </script>
-	<script src="js/jquery.thap.js"></script>
 	<script src="js/lib/jquery.easing.js"></script>
-	
-	<!-- THAP Methods -->
-	<script src="js/thap.js"></script>
+	<script src="js/jquery.future-val.js"></script>
+
 
 
 
@@ -98,7 +95,7 @@
 	$(document).ready( function($) {
 		
 		// Future Val
-		$('#validate-form').validateForm()
+		$('#validate-form').futureVal()
 		
 	})
 	
