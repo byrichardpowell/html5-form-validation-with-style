@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 
-<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache"><![endif]-->
 <!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
 <!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" manifest="default.appcache?v=1" lang="en"><!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
 	<meta charset="utf-8">
 
-	<title>Future Val</title>
+	<title>HTML5 Form Validation With Style</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
 	<!-- For all browsers -->
 	<link href="css/global.css" media="screen" rel="stylesheet" type="text/css" />
 
-	<!-- Selectivizr (GOES IN HEAD)  -->
-	<!--[if IE 7 ]>
-		<script type="text/javascript" src="js/lib/nwmatcher-1.2.4-min.js"></script>
-		<script type="text/javascript" src="js/lib/selectivizr.js"></script>
-	<![endif]-->
-
-	<!-- Modernizr (GOES IN HEAD) -->
-	<script src="js/lib/modernizr.custom.min.js"></script>
+	
+	<style type="text/css">
+    	.download { float: right; }
+    	pre { background: #000; color: #fff; padding: 15px;}
+  	</style>
 
 
 </head>
@@ -32,60 +29,113 @@
 	
 
 	<div class="container">
-	
 		
-		<form class="box-2" id="validate-form">
-			<fieldset>
-				<legend class="header">
-					<span class="title">Form Validation</span>
-				</legend>
-				
-				<div class="content">
-				
-					<label for="name">First Name</label>
-					<input type="text" placeholder="Enter a Username" id="name" data-msg="You must fill in your first name" required="required" class="textfield" />
-
-					<label for="email">Email Address</label>
-					<input type="email" placeholder="Enter an Email..." id="email" required="required" class="textfield" />
-					
-					<label for="tel">Telephone</label>
-					<input type="tel" placeholder="Enter a Phone Adr..." id="tel" required="required" class="textfield" />
-					
-					<label for="url">URL</label>
-					<input type="url" placeholder="Enter a URL..." id="url" required="required" class="textfield" />
-
-					<label for="pass">Password</label>
-					<input type="password" placeholder="Enter a Password..." data-msg="You must enter your password" id="pass" required="required" class="textfield" />
-					
-					<label for="not">Not Required</label>
-					<input type="text" placeholder="la di da da daa" id="not" class="textfield"  />
-					
-				</div>
-				
-				<div class="footer">
-					<button type="submit" class="btn btn-2" title="Do Something"><span>Continue</span></button>
-				</div>			
-			</fieldset>
-		</form>
-
 		
+		<div class="container">
+
+			<article class="clm left">
+
+				<h1>HTML5 Form Validation with Style</h1>
+				<p>This jQuery pluggin aims to take the syntax from HTML5's inputs and validation attributes to create error messages that you can actually style.  This is to get around the fact that HTML5's shadow DOM is (at the moment) still so hard to style.</p>
+
+				<h2>Features</h2>
+				<ul>
+					<li>Support for: required, email, phone, url, matching</li>
+					<li>A Function to run once the form is valid can also be passed in.</li>
+					<li>Error message customisation by adding data-msg="my error message" to the input</li>
+				</ul>
+				
+				<h2>Limitations</h2>
+				<ul>
+					<li>Only one type of validation can be applied to an input. (required &amp; type)</li>
+					<li>I'll add these features as &amp; when I need them on production projects.</li>
+					<li>The pluggin could do with re-structuring, architecturally... its not great.</li>
+				</ul>
+				
+				<h1>Use</h1>
+				
+				<p><pre>$('#my_form_id').html5Val(function($form) {
+	alert( '#' + $form.attr('id') + 'is valid, woop woop')
+})</pre></p>
+
+				<h2>Download</h2>
+			    <p>
+					You can download this project in either <a href="http://github.com/byrichardpowell/html5-form-validation-with-style/zipball/master">zip</a> or <a href="http://github.com/byrichardpowell/html5-form-validation-with-style/tarball/master">tar</a> formats. You can also clone the project with <a href="http://git-scm.com">Git</a> by running:
+			      	<pre>$ git clone git://github.com/byrichardpowell/html5-form-validation-with-style</pre>
+			    </p>
+
+			    <p>get the source code on GitHub : <a href="http://github.com/byrichardpowell/html5-form-validation-with-style">byrichardpowell/html5-form-validation-with-style</a> </p>
+				
+						
+				<h2>Questions?</h2>
+				<ul>
+					<li><a href="mailto:richardo@gmail.com">email me</a></li>
+					<li><a href="http://twitter.com/#!/byrichardpowell">tweet me</a></li>
+					<li><a href="http://www.byrichardpowell.co.uk">visit my website</a></li>
+				</ul>
+
+			</div>
+
+			<aside class="clm">
+				
+				<h1>Demo</h1>
+				
+				<form class="box-2" id="my_form_id">
+					<fieldset>
+
+						<label for="name">First Name
+							<input type="text" placeholder="Enter a Username" id="name" data-msg="You must fill in your first name" required="required" class="textfield" />
+						</label>
+
+						<label for="email">Email Address
+							<input type="email" placeholder="Enter an Email..." id="email" required="required" class="textfield" />
+						</label>
+
+						<label for="tel">Telephone
+							<input type="tel" placeholder="Enter a Phone Adr..." id="tel" required="required" class="textfield" />
+						</label>
+
+						<label for="url">URL
+							<input type="url" placeholder="Enter a URL..." id="url" required="required" class="textfield" />
+						</label>
+
+						<label for="newpass">Pass
+							<input type="password" name="newPassword" id="newpass1" class="textfield" required="required" data-match="newpass2" data-msg="This must match below &amp; not be empty" />
+						</label>
+
+						<label for="newpass2">Confirm Pass
+							<input type="password" name="newPassword2" id="newpass2" class="textfield" required="required" data-match="newpass1" data-msg="This must match above &amp; not be empty" />
+						</label>
+
+						<label for="not">Not Required
+							<input type="text" placeholder="la di da da daa" id="not" class="textfield"  />
+						</label>
+						
+						<button typ="submit" class="btn btn-1"><span>Submit</span></button>
+
+					</fieldset>
+				</form>
+				
+
+			</aside>
+
+
+
+		</div>
+
 		
 	</div>	
 		
 
-	<!-- Store IE Version in a way thats easy to access across pluggins -->
-	<script>ie = false</script>
-	<!--[if IE 6 ]><script> ie = 6; </script><![endif]-->
-	<!--[if IE 7 ]><script> ie = 7; </script><![endif]-->
-	<!--[if IE 8 ]><script> ie = 8; </script><![endif]-->
-	<!--[if IE 9 ]><script> ie = 9; </script><![endif]-->
-
+	<a href="http://github.com/byrichardpowell/html5-form-validation-with-style">
+		<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+	</a>
 
 	<!-- JQuery -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 	<script> window.jQuery || document.write('<script src="js/lib/jquery-1.6.1.min.js">\x3C/script>') </script>
 	<script src="js/lib/jquery.easing.js"></script>
-	<script src="js/jquery.future-val.js"></script>
+	<script src="js/jquery.html5-validation.js"></script>
 
 
 
@@ -95,12 +145,16 @@
 	$(document).ready( function($) {
 		
 		// Future Val
-		$('#validate-form').futureVal()
+		$('#my_form_id').html5Val(function($form) {
+			
+			alert( '#' + $form.attr('id') + 'is valid, woop woop')
+			
+		})
 		
 	})
 	
 </script>
-
-<noscript>This site requires Javascript</noscript>
+  
 </body>
 </html>
+
